@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MJ Tech Solutions - Serviços de TI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --azul-escuro: #0a1e3f;
+      --azul-medio: #144a85;
+      --azul-claro: #4aa1f3;
+      --cinza-claro: #f0f4f8;
+      --cinza-texto: #2c3e50;
+      --destaque: #00bfff;
+      --fundo-vidro: rgba(255, 255, 255, 0.2);
+      --texto-primario: #2c3e50;
+      --texto-claro: #ffffff;
+    }
+
+    body.dark { background-color: #121212; color: var(--texto-claro); }
+    body.dark section { background: rgba(0, 0, 0, 0.4); border-color: rgba(255, 255, 255, 0.2); }
+    body.dark nav { background: rgba(0, 0, 0, 0.3); }
+    body.dark nav ul li a { color: white; }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; scroll-behavior: smooth; }
+
+    body { line-height: 1.6; background-color: var(--cinza-claro); color: var(--texto-primario); }
+
+    nav { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+    nav ul { display: flex; justify-content: center; list-style: none; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: var(--texto-primario); text-decoration: none; padding: 10px 15px; display: block;
+      transition: color 0.3s ease; font-weight: bold; }
+    nav ul li a:hover { color: var(--azul-claro); }
+
+    header { background: linear-gradient(90deg, var(--azul-escuro), var(--azul-medio)); color: white; padding: 40px 20px; text-align: center; }
+
+    .header-flex { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px; }
+    .logo { height: 100px; width: 100px; border-radius: 50%; border: 4px solid white; box-shadow: 0 0 20px rgba(0, 191, 255, 0.6); }
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-text p { font-size: 1.2rem; }
+
+    section { background: var(--fundo-vidro); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.3); padding: 40px 20px; margin: 40px auto;
+      max-width: 1000px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); animation: fadeInUp 1s ease; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    h2 { margin-bottom: 20px; color: var(--azul-escuro); text-align: center; }
+    ul { list-style: none; padding-left: 0; }
+    ul li { margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    ul li i { font-size: 1.5rem; color: var(--azul-medio); }
+    ul li strong { color: var(--azul-medio); }
+
+    form input, form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #bcccdc;
+      border-radius: 6px; background-color: white; }
+    form button { background: #005fa3; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+
+    footer { background: var(--azul-escuro); color: white; text-align: center; padding: 20px; }
+    .whatsapp-icon { position: fixed; bottom: 20px; right: 20px; font-size: 36px; color: #25D366; z-index: 1000; }
+    .toggle-dark-mode { position: fixed; bottom: 20px; left: 20px; background: rgba(255, 255, 255, 0.7); border: none;
+      border-radius: 50%; padding: 10px; font-size: 18px; cursor: pointer; z-index: 1000; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+    body.dark .toggle-dark-mode { background: rgba(0, 0, 0, 0.7); color: white; }
+
+    .nav-container { display: flex; align-items: center; justify-content: space-between; max-width: 1000px; margin: 0 auto; padding: 5px 20px; }
+    .nav-logo { height: 40px; width: 40px; border-radius: 50%; margin-right: 20px; }
+    nav ul { display: flex; list-style: none; margin-left: 40px; }
+  </style>
+</head>
+<body>
+  <button class="toggle-dark-mode" onclick="toggleDarkMode()">🌓</button>
+
+  <nav>
+    <div class="nav-container">
+      <img src="logo.jpg" alt="Logo" class="nav-logo">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-flex">
+      <img class="logo" src="logo.jpg" alt="Logo da MJ Tech Solutions">
+      <div class="hero-text">
+        <h1>MJ Tech Solutions</h1>
+        <p>Soluções completas em Tecnologia da Informação para empresas e pessoas</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A <strong>MJ Tech Solutions</strong> é especializada em <strong>serviços de TI</strong> voltados para empresas e usuários finais. Atuamos com foco em oferecer soluções práticas, seguras e de alta qualidade, garantindo que sua infraestrutura de tecnologia esteja sempre disponível e eficiente.</p>
+    <p>Contamos com experiência em suporte técnico, projetos e implantação de redes, servidores, consultoria e treinamento. Nosso objetivo é proporcionar tranquilidade e confiança para que você foque no que realmente importa: o crescimento do seu negócio.</p>
+  </section>
+
+  <section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <ul>
+      <li><i class="fas fa-laptop"></i><strong> Manutenção de Computadores e Notebooks:</strong> diagnósticos rápidos, reparos, upgrades e otimização de desempenho.</li>
+      <li><i class="fas fa-network-wired"></i><strong> Projeto de Redes:</strong> análise, planejamento e implementação de redes corporativas seguras e escaláveis.</li>
+      <li><i class="fas fa-server"></i><strong> Cabeamento Estruturado:</strong> organização e instalação de cabeamento para ambientes de pequeno, médio e grande porte.</li>
+      <li><i class="fas fa-database"></i><strong> Servidores:</strong> configuração, monitoramento e administração de servidores locais e em nuvem.</li>
+      <li><i class="fas fa-chalkboard-teacher"></i><strong> Treinamento:</strong> capacitação em tecnologia para equipes e profissionais que desejam ampliar seus conhecimentos.</li>
+      <li><i class="fas fa-user-tie"></i><strong> Consultoria em TI:</strong> apoio estratégico na tomada de decisões, otimização de processos e alinhamento da TI ao seu negócio.</li>
+    </ul>
+  </section>
+
+  <section id="diferenciais">
+    <h2>Nossos Diferenciais</h2>
+    <ul>
+      <li><i class="fas fa-bolt"></i><strong> Atendimento Rápido:</strong> suporte ágil para reduzir o tempo de inatividade e manter seu negócio sempre em funcionamento.</li>
+      <li><i class="fas fa-headset"></i><strong> Suporte Remoto:</strong> resolvemos problemas de onde estivermos, garantindo praticidade e eficiência.</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" rows="4" placeholder="Sua mensagem" required></textarea>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Contato: <a href="mailto:paulodemirandajr@gmail.com" style="color:white;">paulodemirandajr@gmail.com</a></p>
+  </footer>
+
+  <a href="https://wa.me/55047992451660?text=Olá%2C%20quero%20saber%20mais%20sobre%20a%20MJ%20Tech%20Solutions!" class="whatsapp-icon" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
